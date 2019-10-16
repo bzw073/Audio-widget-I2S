@@ -9,7 +9,7 @@
 >>_Daca facem referinta la vremurile actuale,se poate spune ca practic nici nu se punea problema de calitate sau termenul de **Hi-Fi** in acele vremuri,dar acele sunete au reprezentat ceea ce urma sa fie boom-ul erei digitale_
 >
 >Ca si istorie a acestei ere in care traim,se pot scrie foarte multe lucruri deja cunoscute,asa ca voi incerca sa ma concentrez pe esential.
-######
+
 >Ideea de "calitate audio" pe digital a aparut in momentul lansarii pe piata mondiala a CD-ului (acel lucru care acum multora dintre noi ni se pare atat de outdated,ori chiar nu il mai folosim),dar el a avut cea mai mare influenta in aparitia de tehnologii de compresie si codare audio.Ca si concept,ideea de CD a aparut prin anul 1980 ,cand Philips si Sony au incheiat un parteneriat de cercetare in domeniul digital,dorindu-se un mediu de stocare unic transmisibil,care sa aibe un spatiu de stocare a informatiilor mult mai mare decat cel al dischetelor "floppy" si al benzilor magnetice,dar totusi sa nu coste cat un hard disk al vremurilor (memo: un hard disk de tip Winchester avea o capacitate de maxim 128MB , cantarea in jur de 15-20kg si era cam cat un desktop SFF actual ca dimensiuni si costa in jur de ~5.000 de dolari unul?).
 >>Standardul CD a fost definitivat in jurul anului 1983,iar in urma intelegerii realizate intre cele 2 concerne se va realiza trecerea industriei audio catre acest mediu.
 
@@ -21,3 +21,19 @@
 PCM reprezinta transformarea semnalelor analogice in semnale digitale printr-un algoritm de esantionare constanta a amplitudinii semnalului analogic ,iar fiecare esantion este cuantizat la cea mai apropiata valoare dintr-o gama de cuante apropiate.
 >>**Codarea PCM prezinta 2 proprietati ce determina calitatea conversiei semnalului original raportat la acesta : rata de esantionare a semnalului si _bit depth_,care reprezinta cantitatea de biti al fiecarui esantion realizat (un CD-Audio prezinta un bit depth de 16 biti per esantion , pe cand un Blu-ray sau DVD-Audio 24 de biti per esantion).**
 >>> Extensiile posibile unei compresii PCM sunt ".wav" ,".L16",".PCM",".AIFF",".AU"
+
+>Pe baza codarii/compresiei PCM a fisierelor audio, cei de la Philips au realizat in anul 1986 (si ulterior revizuit in 1996) un protocol de transmisie seriala al datelor audio intre dispozitive / circuite integrate , protocol care inca se foloseste cu succes si in prezent in dispozitivele audio. Este cunoscut sub acronimul I2S sau IIS **Inter-IC Sound** si se bazeaza pe o magistrala sincrona de transmisie de date (clockul de transmisie intre circuite este separat de magistrala de date,deci implicit receptorul nu mai are nevoie de un circuit suplimentar de refacere a frontului de ceas trimis de emitator).
+>Protocolul este relativ usor de interpretat, in principal avem de-a face cu 3 semnale : bit clock line(**BCLK**) , word clock line (cunoscut sub denumirea oficiala de 'word select' **WS** sau 'left-right clock' **LRCLK** ) si cel putin o linie de date multiplexata **SD**
+
+>>Adeseori se mai poate intalni peste cele 3 semnale cunoscute inca un semnal de tact (care nu face parte din protocol) cu rolul de a sincroniza operatiile interne ale DAC-urilor cu cele ale controllerului . Este gasit sub acronimul de "Master clock" **MCLK**
+>>>Frecventa tipica de lucru se calculeaza dupa formula : **MCLK = 256 * LRCLK**
+
+![500px-I2S_Timing svg](https://user-images.githubusercontent.com/54248886/66950287-bf636680-f060-11e9-9627-63df32e9b9f9.png)
+
+###### Cum functioneaza protocolul:
+
+Semnalul de "Word Select" permite dispozitivului receptor sa 'vada' ce canal urmeaza sa fie trimis , deoarece I2S permite ca pe aceeasi linie de date sa fie trimise 2 canale,fiind un semnal cu factor de umplere 50% si frecventa egala cu cea de esantionare a semnalului trimis.
+>>**Pentru semnale stereo , in brosura de specificatii a I2S se spune ca semnalul audio de pe canalul stang se transmite pe palierul de 0 al Word Select , iar canalul drept pe palierul de 1 . De obicei , semnalul "Word Select" este sincronizat dupa fronturile cazatoare ale semnalului BCLK , deoarece datele sunt zavorate pe fronturile crescatoare**.
+>>
+ >Se stabileste semnul liniei de date si se codeaza in complement fata de 2 cu primul bit MSB-ul . **Acest lucru permite ca numarul de biti per cadru sa fie arbitrar , fara a fi nevoie de "negociere" intre emitator si receptor **.
+
