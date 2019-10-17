@@ -30,10 +30,10 @@ PCM reprezinta transformarea semnalelor analogice in semnale digitale printr-un 
 
 ![500px-I2S_Timing svg](https://user-images.githubusercontent.com/54248886/66950287-bf636680-f060-11e9-9627-63df32e9b9f9.png)
 
-###### Cum functioneaza protocolul:
+###### **Cum functioneaza protocolul:**
 
-Semnalul de "Word Select" permite dispozitivului receptor sa 'vada' ce canal urmeaza sa fie trimis , deoarece I2S permite ca pe aceeasi linie de date sa fie trimise 2 canale,fiind un semnal cu factor de umplere 50% si frecventa egala cu cea de esantionare a semnalului trimis.
+>Semnalul de "Word Select" permite dispozitivului receptor sa 'vada' ce canal urmeaza sa fie trimis , deoarece I2S permite ca pe aceeasi linie de date sa fie trimise 2 canale,fiind un semnal cu factor de umplere 50% si frecventa egala cu cea de esantionare a semnalului trimis.
 >>**Pentru semnale stereo , in brosura de specificatii a I2S se spune ca semnalul audio de pe canalul stang se transmite pe palierul de 0 al Word Select , iar canalul drept pe palierul de 1 . De obicei , semnalul "Word Select" este sincronizat dupa fronturile cazatoare ale semnalului BCLK , deoarece datele sunt zavorate pe fronturile crescatoare**.
 >>
- >Se stabileste semnul liniei de date si se codeaza in complement fata de 2 cu primul bit MSB-ul . **Acest lucru permite ca numarul de biti per cadru sa fie arbitrar , fara a fi nevoie de "negociere" intre emitator si receptor **.
+>Se stabileste semnul liniei de date si se codeaza in complement fata de 2 cu primul bit MSB-ul . **Acest lucru permite ca numarul de biti per cadru sa fie arbitrar , fara a fi nevoie de "negociere" intre emitator si receptor **.
 
