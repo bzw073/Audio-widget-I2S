@@ -30,10 +30,24 @@ PCM reprezinta transformarea semnalelor analogice in semnale digitale printr-un 
 
 ![500px-I2S_Timing svg](https://user-images.githubusercontent.com/54248886/66950287-bf636680-f060-11e9-9627-63df32e9b9f9.png)
 
-###### **Cum functioneaza protocolul:**
+###### Cum functioneaza protocolul:
 
 >Semnalul de "Word Select" permite dispozitivului receptor sa 'vada' ce canal urmeaza sa fie trimis , deoarece I2S permite ca pe aceeasi linie de date sa fie trimise 2 canale,fiind un semnal cu factor de umplere 50% si frecventa egala cu cea de esantionare a semnalului trimis.
 >>**Pentru semnale stereo , in brosura de specificatii a I2S se spune ca semnalul audio de pe canalul stang se transmite pe palierul de 0 al Word Select , iar canalul drept pe palierul de 1 . De obicei , semnalul "Word Select" este sincronizat dupa fronturile cazatoare ale semnalului BCLK , deoarece datele sunt zavorate pe fronturile crescatoare**.
 >>
 >Se stabileste semnul liniei de date si se codeaza in complement fata de 2 cu primul bit MSB-ul . **Acest lucru permite ca numarul de biti per cadru sa fie arbitrar , fara a fi nevoie de "negociere" intre emitator si receptor **.
 
+## Specificatii montaj:
+
+1.Microcontroller utilizat:  Atmel AT32UC3A3256 
+ >>>  A complete system-on-chip 32-bit AVR microcontroller. It is designed for cost-sensitive embedded applications that require low power consumption, high code density and high performance.
+
+ >>> The microcontroller's Memory Protection Unit (MPU) and fast, flexible interrupt controller support the latest real-time operating systems. Higher computation capabilities are achievable using a rich set of DSP instructions. The device incorporates on-chip flash and SRAM memories for secure and fast access. 64 KBytes of SRAM are directly coupled to the 32-bit AVR UC3 for performance optimization. Two blocks of 32 Kbytes SRAM are independently attached to the high speed bus matrix for real ping-pong management.
+
+ >>> The microcontroller achieves exceptionally high data throughput by combining the multi-layered 32-bit AVR databus,128 KB on-chip SRAM with triple high speed interfaces, multi-channel peripheral, memory-to-memory DMA controller, high-speed USB embedded host, SD/SDIO card, MLC NAND flash with ECC, and SDRAM interfaces.
+
+ >>> This device features 256KB internal high-speed flash and full-duplex multi-channel I2S audio interface.
+
+2.Utilizeaza USB Audio Class 1 / 2.
+
+3.Capabilitati de redare audio pana la 24bit/196kHz (bit depth / sampling rate).
