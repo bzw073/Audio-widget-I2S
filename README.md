@@ -50,4 +50,4 @@ PCM reprezinta transformarea semnalelor analogice in semnale digitale printr-un 
 
 2.Utilizeaza USB Audio Class 1 / 2.
 
-3.Capabilitati de redare audio pana la 24bit/196kHz (bit depth / sampling rate).
+3.Capabilitati de redare audio pana la 24bit/96kHz (bit depth / sampling rate).
