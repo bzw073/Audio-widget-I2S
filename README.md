@@ -39,7 +39,8 @@ PCM reprezinta transformarea semnalelor analogice in semnale digitale printr-un 
 
 ## Specificatii montaj:
 
-1.Microcontroller utilizat:  Atmel AT32UC3A3256 
+1.
+ a)Microcontroller utilizat:  Atmel AT32UC3A3256 
  >>>  A complete system-on-chip 32-bit AVR microcontroller. It is designed for cost-sensitive embedded applications that require low power consumption, high code density and high performance.
 
  >>> The microcontroller's Memory Protection Unit (MPU) and fast, flexible interrupt controller support the latest real-time operating systems. Higher computation capabilities are achievable using a rich set of DSP instructions. The device incorporates on-chip flash and SRAM memories for secure and fast access. 64 KBytes of SRAM are directly coupled to the 32-bit AVR UC3 for performance optimization. Two blocks of 32 Kbytes SRAM are independently attached to the high speed bus matrix for real ping-pong management.
@@ -47,7 +48,22 @@ PCM reprezinta transformarea semnalelor analogice in semnale digitale printr-un 
  >>> The microcontroller achieves exceptionally high data throughput by combining the multi-layered 32-bit AVR databus,128 KB on-chip SRAM with triple high speed interfaces, multi-channel peripheral, memory-to-memory DMA controller, high-speed USB embedded host, SD/SDIO card, MLC NAND flash with ECC, and SDRAM interfaces.
 
  >>> This device features 256KB internal high-speed flash and full-duplex multi-channel I2S audio interface.
+ 
+ b) DAC utilizat: PCM5102A
 
+ >>>The PCM510xA devices are a family of monolithic CMOS-integrated circuits that include a stereo digital-to-analog converter and additional support circuitry in a small TSSOP package. The PCM510xA devices use the latest generation of TI’s advanced segment-DAC architecture to achieve excellent dynamic performance and improved tolerance to clock jitter.
+
+ c) Amplificator/buffer iesire folosit : TPA6120
+ >>>In applications requiring a high-power output, very high fidelity headphone amplifier, the TPA6120A2 replaces a costly discrete design and allows music, not the amplifier, to be heard. The TPA6120A2’s current-feedback AB amplifier architecture delivers high bandwidth, extremely low noise, and up to 128dB of dynamic range.
+ 
 2.Utilizeaza USB Audio Class 1 / 2.
 
 3.Capabilitati de redare audio pana la 24bit/96kHz (bit depth / sampling rate).
+
+4.Tensiune de alimentare: 5V
+
+5.Consum max: 500mA 
+
+
+
+
