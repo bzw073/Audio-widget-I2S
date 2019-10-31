@@ -64,6 +64,16 @@ PCM reprezinta transformarea semnalelor analogice in semnale digitale printr-un 
 
 5.Consum max: 500mA 
 
+### Constructie montaj:
 
+Contructia se bazeaza pe un design modular , iar in acest sens voi concepe intregul sistem pe 4 placi:
+ - una o va constitui interfata emulatoare usb-i2s
+ - o placa pentru DAC si , eventual , buffere de iesire
+ - o placa pentru amplificatorul final
+ - o placa pentru alimentare suplimentara
+
+Ideea conceperii montajului intr-un sistem modular este pentru imbunatatirea "lantului" pe decursul timpului (ex. realizarea unui DAC mai performant din perspectiva SNR / PSRR sau schimbarea unei surse liniare cu una in comutatie sau adaugarea de acumulatori pentru portabilitate etc.)
+
+De altfel,un montaj modular poate presupune o asezare mai buna in cutie si,totodata, un ecranaj mai bun al partilor **mai sensibile** fata de circuitul de alimentare.
 
 
